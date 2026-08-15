@@ -1,8 +1,10 @@
-const CACHE_NAME = 'molesworth-log-v1.01';
+const CACHE_NAME = 'molesworth-log-v1.02';
 const ASSETS = [
   './',
   './index.html',
-  './manifest.json'
+  './manifest.json',
+  './icon-192.png',
+  './icon-512.png'
 ];
 
 self.addEventListener('install', (e) => {
