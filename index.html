@@ -20,23 +20,27 @@
       --bg: #f2f4f3;
     }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden; /* Prevents side-to-side wobble */
       background: var(--bg);
       color: var(--text);
-      margin: 0;
-      padding: 12px;
-      display: flex;
-      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       -webkit-tap-highlight-color: transparent;
     }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: clamp(8px, 2vw, 16px); /* Scales padding smoothly on all screens */
+    }
     .app-card {
-      background: white;
-      max-width: 480px;
+     background: white;
       width: 100%;
-      padding: 20px;
+      max-width: 480px; /* Expands to full screen on phones, limits width on tablets/desktop */
+      padding: clamp(14px, 4vw, 24px);
       border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      box-sizing: border-box;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
     .app-logo {
       display: block;
@@ -110,15 +114,19 @@
       align-items: center;
       padding: 10px 0;
       border-bottom: 1px solid #f0f0f0;
+      gap: 8px;
     }
     .stepper-label {
       font-weight: 600;
       font-size: 0.92rem;
+      flex: 1;
+      word-break: break-word;
     }
     .stepper-controls {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 6px;
+      flex-shrink: 0; /*Prevents buttons from collapsing*/
     }
     .stepper-controls button {
       width: 38px;
